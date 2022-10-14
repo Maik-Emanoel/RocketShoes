@@ -2,7 +2,7 @@
 
 ![preview](./.github/preview.png)
 
-[Clique aqui para acessar] ()
+[Clique aqui para acessar](https://maik-emanoel.github.io/RocketShoes/)
 
 ## Contando um pouco sobre o projeto
 

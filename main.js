@@ -1,65 +1,45 @@
-const viewer = document.querySelector('.viewer')
-const photos = document.querySelector('.photos')
+const searchBtn = document.querySelector('.searchContainer button')
+const inputText = document.querySelector('#search')
+const logo = document.querySelector('.logo')
 
-const img1 = photos.children[0]
-const img2 = photos.children[1]
-const img3 = photos.children[2]
-
-let show = true;
-
-const btn = document.querySelector('.menuToggle')
 const menuSection = document.querySelector('.menuSection')
+const ul = document.querySelector('.menuSection ul')
+const menuBtn = document.querySelector('.menuToggle')
 
-window.addEventListener('load', () => {
-  img1.classList.add('active'),
-  viewer.style.background = 'url(./assets/tenis-1-galeria.png) no-repeat center/contain'
+// add class "on" on input text and button
+searchBtn.addEventListener('click', addMenuExpanded)
+
+function addMenuExpanded() {
+    searchBtn.classList.add('on')
+    inputText.classList.add('on')
+    inputText.focus()
+    
+    if(searchBtn.classList.contains('on') & !menuSection.classList.contains('on')) {
+        ul.style.visibility = 'hidden'
+    }
+
+    const iconBag = document.querySelector('#iconBag')
+    if(window.matchMedia("(max-width:550px)").matches) {
+        logo.style.display = 'none'
+        menuBtn.style.display = 'none'
+    }
+}
+
+// remove class 'on' to leave of the inputText focus
+inputText.onblur = function removeClassOn() {
+    searchBtn.classList.remove('on')
+    inputText.classList.remove('on')
+
+    ul.style.visibility = 'initial'
+
+    if(window.matchMedia("(max-width:550px)").matches) {
+        logo.style.display = 'flex'
+        menuBtn.style.display = 'flex'
+    }
+}
+
+// menuSection activated
+menuBtn.addEventListener('click', function activateMenuExpanded() {
+    menuSection.classList.toggle('on')
 })
-
-img1.addEventListener('click', () => {
-  if(img1.classList.contains('active') == false){
-    img1.classList.add('active')
-    img2.classList.remove('active')
-    img3.classList.remove('active')
-
-    viewer.style.background = 'url(./assets/tenis-1-galeria.png) no-repeat center/contain'
-  }
-  
-})
-
-img2.addEventListener('click', () => {
-  if(img2.classList.contains('active') == false){
-    img2.classList.add('active')
-    img1.classList.remove('active')
-    img3.classList.remove('active')
-
-    viewer.style.background = 'url(./assets/tenis-2-galeria.png) no-repeat center/contain'
-  }
-})
-
-img3.addEventListener('click', () => {
-  if(img3.classList.contains('active') == false){
-    img3.classList.add('active')
-    img1.classList.remove('active')
-    img2.classList.remove('active')
-
-    viewer.style.background = 'url(./assets/tenis-3-galeria.png) no-repeat center/contain'
-  }
-})
-
-const main = document.querySelector('main')
-
-btn.addEventListener('click', () => {
-
-  document.body.style.overflow = show ? "hidden" : "initial"
-
-  menuSection.classList.toggle('on', show)
-  show = !show;
-
-  if(menuSection.classList.contains('on')){
-    main.style.visibility = "hidden"
-  } else {
-    main.style.visibility = 'initial'
-  }
-})
-
 

@@ -196,6 +196,13 @@ main .priceContainer a {
 
   color: #ffffff;
   background: var(--button);
+
+  transition: all .3s;
+}
+
+main .priceContainer a:hover {
+  transform: scale(1.1);
+  border-radius: 10px;
 }
 
 main .viewerContainer {
@@ -242,6 +249,23 @@ footer ul li a {
   text-transform: uppercase;
 
   color: var(--text);
+  transition: all .3s ease-in-out;
+}
+
+footer ul li:nth-child(2) a:hover {
+  color: #0014FF;
+}
+
+footer ul li:nth-child(3) a:hover {
+  color: #3F0071;
+}
+
+footer ul li:nth-child(4) a:hover {
+  color: #FF0000;
+}
+
+footer ul li:nth-child(5) a:hover {
+  color: #0081C9;
 }
 
 footer ul li:last-child {
@@ -258,6 +282,26 @@ footer ul li:last-child a {
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+footer ul li:last-child a:hover {
+  transform: scale(1.1);
+}
+
+footer ul li:last-child a:hover img {
+  animation: toDisappear .3s forwards;
+}
+
+@keyframes toDisappear {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  } 
+  to {
+    opacity: 0;
+    transform: translateX(10px);
+    display: none;
+  }
 }
 
 /* --------------------- responsivity ----------------------- */
@@ -513,6 +557,26 @@ footer ul li:last-child a {
     border-radius: 6px;
   }
 
+  footer ul li:nth-child(2) a:hover {
+    background: #0014FF;
+    color: #ffffff;
+  }
+  
+  footer ul li:nth-child(3) a:hover {
+    background: #3F0071;
+    color: #ffffff;
+  }
+  
+  footer ul li:nth-child(4) a:hover {
+    background: #FF0000;
+    color: #ffffff;
+  }
+  
+  footer ul li:nth-child(5) a:hover {
+    background: #0081C9;
+    color: #ffffff;
+  }
+
   footer ul li:last-child {
     width: 100%;
     background: initial;
@@ -524,6 +588,14 @@ footer ul li:last-child a {
 
     border-radius: initial;
     background: var(--footer);
+  }
+
+  footer ul li:last-child a:hover {
+    transform: none;
+  }
+  
+  footer ul li:last-child a:hover img {
+    animation: none;
   }
 
   footer ul li:nth-child(2) {

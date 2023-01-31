@@ -6,6 +6,8 @@ const menuSection = document.querySelector('.menuSection')
 const ul = document.querySelector('.menuSection ul')
 const menuBtn = document.querySelector('.menuToggle')
 
+const allImages = document.querySelectorAll('.photos')
+
 // add class "on" on input text and button
 searchBtn.addEventListener('click', addMenuExpanded)
 
@@ -43,3 +45,9 @@ menuBtn.addEventListener('click', function activateMenuExpanded() {
     menuSection.classList.toggle('on')
 })
 
+//===============================================
+// const turnIntoArray = Array.from(allImages)
+
+// for (let i = 0; i < turnIntoArray.len; index++) {
+//     console.log(i)
+// }

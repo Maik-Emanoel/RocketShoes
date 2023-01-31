@@ -77,8 +77,36 @@ header .menuSection ul li a {
 
   text-transform: uppercase;
   color: var(--text);
+
+  cursor: pointer;
+  position: relative;
 }
 
+header .menuSection ul li a:hover::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background: var(--footer);
+
+  animation: toLeft .5s;
+}
+
+/* animation on menu section ul li a */
+
+@keyframes toLeft {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* ================================== */
 header .searchContainer {
   display: flex;
   align-items: center;
@@ -410,6 +438,11 @@ footer ul li:last-child a {
     padding: 20px 0 20px 35px;
     width: 100%;
     display: block;
+  }
+
+  .menuSection.on ul li a:hover::before {
+    animation: none;
+    position: initial;
   }
   /* ================================== */
   main {

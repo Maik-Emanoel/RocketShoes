@@ -250,6 +250,10 @@ footer ul li a {
 
   color: var(--text);
   transition: all .3s ease-in-out;
+
+  -webkit-box-shadow: 11px 22px 51px -20px rgba(168,161,168,1);
+  -moz-box-shadow: 11px 22px 51px -20px rgba(168,161,168,1);
+  box-shadow: 11px 22px 51px -20px rgba(168,161,168,1);
 }
 
 footer ul li:nth-child(2) a:hover {

@@ -6,7 +6,10 @@ const menuSection = document.querySelector('.menuSection')
 const ul = document.querySelector('.menuSection ul')
 const menuBtn = document.querySelector('.menuToggle')
 
-const allImages = document.querySelectorAll('.photos')
+const photos = document.querySelector('.photos')
+const viewer = document.querySelector('.viewer')
+const allImg = photos.querySelectorAll('div img')
+const span = photos.querySelectorAll('div span')
 
 // add class "on" on input text and button
 searchBtn.addEventListener('click', addMenuExpanded)
@@ -20,7 +23,6 @@ function addMenuExpanded() {
         ul.style.visibility = 'hidden'
     }
 
-    const iconBag = document.querySelector('#iconBag')
     if(window.matchMedia("(max-width:550px)").matches) {
         logo.style.display = 'none'
         menuBtn.style.display = 'none'
@@ -45,9 +47,32 @@ menuBtn.addEventListener('click', function activateMenuExpanded() {
     menuSection.classList.toggle('on')
 })
 
-//===============================================
-// const turnIntoArray = Array.from(allImages)
 
-// for (let i = 0; i < turnIntoArray.len; index++) {
-//     console.log(i)
-// }
+// feature to add .photos img to viewer
+const allImgArr = Array.from(allImg)
+const spanArr = Array.from(span)
+
+photos.addEventListener('click', (e) => {
+    const bgConfig = 'no-repeat center/100%'
+
+    if(e.target == allImgArr[0]) {
+        viewer.style.background= `url(./assets/tenis-1-galeria.png)` + bgConfig
+        spanArr[0].classList.add('active')
+    } else {
+        spanArr[0].classList.remove('active')
+    }
+
+    if(e.target == allImgArr[1]) {
+        viewer.style.background= `url(./assets/tenis-2-galeria.png)` + bgConfig
+        spanArr[1].classList.add('active')
+    } else {
+        spanArr[1].classList.remove('active')
+    }
+
+    if(e.target == allImgArr[2]) {
+        viewer.style.background= `url(./assets/tenis-3-galeria.png)` + bgConfig
+        spanArr[2].classList.toggle('active')
+    } else {
+        spanArr[2].classList.remove('active')
+    }
+})

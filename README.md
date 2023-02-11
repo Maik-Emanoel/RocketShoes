@@ -1,15 +1,25 @@
-# RocketShoes
+<h1 align="center"> RocketShoes </h1>
 
 ![preview](./.github/preview.png)
 
-[Clique aqui para acessar](https://maik-emanoel.github.io/RocketShoes/)
+[Clique aqui para acessar](https://maik-emanoel.github.io/rocketshoes/)
 
-## Contando um pouco sobre o projeto
+## 🚀 Tecnologias
 
-  Projeto feito a partir do layout disponibilizado na área de desafios do programa Discover da Rocketseat. Contudo, adicionei novas funcionalidades, como a opção de clicar na imagem e ela ser visualizada com um tamanho maior no visualizador de imagens, novas animações e efeitos "hover" e também tornei o layout totalmente responsivo, fazendo com que o site se adapte para qualquer tamanho de tela.
-
-## Tecnologias utilizadas no projeto:
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML
 - CSS
 - JavaScript
+- Git
+- GitHub
+
+## 💻 Projeto
+
+O RocketShoes um exemplo de um mini e-commerce de calçados esportivos. <br>
+
+Obs: Projeto construído a partir da área de desafios do Programa Discover da [Rocketseat](https://rocketseat.com.br). Após concluir o desafio inicial, adicionei novas features ao projeto, como por exemplo:
+
+- Layout Responsivo
+- Efeitos hover nos botões
+- Ao clicar na imagem do tênis, ele irá aparecer ampliado para melhor visualização.

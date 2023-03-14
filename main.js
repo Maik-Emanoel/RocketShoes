@@ -9,7 +9,7 @@ const menuBtn = document.querySelector('.menuToggle')
 const photos = document.querySelector('.photos')
 const viewer = document.querySelector('.viewer')
 const allImg = photos.querySelectorAll('div img')
-const span = photos.querySelectorAll('div span')
+const spans = photos.querySelectorAll('div span')
 
 // add class "on" on input text and button
 searchBtn.addEventListener('click', addMenuExpanded)
@@ -47,32 +47,22 @@ menuBtn.addEventListener('click', function activateMenuExpanded() {
     menuSection.classList.toggle('on')
 })
 
+const bgConfig = 'no-repeat center/100%'
+const numberBg = 3
 
-// feature to add .photos img to viewer
-const allImgArr = Array.from(allImg)
-const spanArr = Array.from(span)
+allImg.forEach((photo, i) => {
+    photo.addEventListener('click', () => {
+        viewer.style.background = `url(./assets/tenis-${i + 1}-galeria.png)` + bgConfig
 
-photos.addEventListener('click', (e) => {
-    const bgConfig = 'no-repeat center/100%'
-
-    if(e.target == allImgArr[0]) {
-        viewer.style.background= `url(./assets/tenis-1-galeria.png)` + bgConfig
-        spanArr[0].classList.add('active')
-    } else {
-        spanArr[0].classList.remove('active')
-    }
-
-    if(e.target == allImgArr[1]) {
-        viewer.style.background= `url(./assets/tenis-2-galeria.png)` + bgConfig
-        spanArr[1].classList.add('active')
-    } else {
-        spanArr[1].classList.remove('active')
-    }
-
-    if(e.target == allImgArr[2]) {
-        viewer.style.background= `url(./assets/tenis-3-galeria.png)` + bgConfig
-        spanArr[2].classList.toggle('active')
-    } else {
-        spanArr[2].classList.remove('active')
-    }
+        const span = spans[i]
+        const activeIndex = Array.from(spans).indexOf(span)
+        span.classList.add('active')
+        spans.forEach((otherSpan, index) => {
+            if (index !== activeIndex) {
+                otherSpan.classList.remove('active')
+            }
+            
+        })
+    })
 })
+
